@@ -25,9 +25,7 @@
 						Our company currently developing web and mobile applications for varies clients and business expend rapidly recent years.
 						We keen on developing secure, efficient and user friendly solutions.</p>
 					<ul class="actions">
-						<li><a href="#technical" class="button special color1 circle icon fa-angle-right">Next</a></li>
-						<li><a href="#first" class="button special color1 circle icon fa-angle-right">Next</a></li>
-						<li><a href="#apps" class="button special color1 circle icon fa-angle-right">Next</a></li>
+						<li><a href="#web" class="button special color1 circle icon fa-angle-right">Next</a></li>
 					</ul>
 				</div>
 				<div class="image filtered span-1-75" data-position="25% 25%">
@@ -36,7 +34,7 @@
 			</section>
 
 			<!-- Panel (Spotlight) -->
-			<section class="panel spotlight medium right" id="first">
+			<section class="panel spotlight medium right" id="web">
 				<div class="content span-7">
 					<h2 class="major">Web Base Solutions</h2>
 					<p> This ia sample text. This ia sample text. This ia sample text. This ia sample text. This ia sample text. This ia sample
@@ -438,64 +436,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<script src="assets/js/jquery_portfo.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/main_portfo.js"></script>
-	<script type="text/javascript">
-		var jump = function (event) {
-			if (event) {
-				var href = $this.attr('href')
-				event.preventDefault();
-			} else {
-				var href = location.hash
-			}
-
-			var $this = $(this),
-				// href = $this.attr('href'),
-				$target, x, y;
-
-			// Get target.
-			if (href == '#'
-				|| ($target = $(href)).length == 0)
-				return;
-
-			// Prevent default.
-			// event.preventDefault();
-
-			// Calculate x, y.
-			if (skel.breakpoint('small').active) {
-
-				x = $target.offset().top - (Math.max(0, $window.height() - $target.outerHeight()) / 2);
-				y = { scrollTop: x };
-
-			}
-			else {
-
-				x = $target.offset().left - (Math.max(0, $window.width() - $target.outerWidth()) / 2);
-				y = { scrollLeft: x };
-
-			}
-
-			// Scroll.
-			$bodyHtml
-				.stop()
-				.animate(
-				y,
-				settings.linkScrollSpeed,
-				'swing'
-				);
-
-		}
-		$(document).ready(function () {
-			$('a[href^=#]').bind("click", jump);
-
-			if (location.hash) {
-				setTimeout(function () {
-					$('html, body').scrollTop(0).show();
-					jump();
-				}, 0);
-			} else {
-				$('html, body').show();
-			}
-		});
-	</script>
 
 </body>
 

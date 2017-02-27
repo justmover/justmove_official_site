@@ -576,45 +576,60 @@
 			})();
 
 		// Link scroll.
-		$wrapper
-			.on('click', 'a[href^="#"]', function (event) {
+		var linkScroll = function (event) {
 
-				var $this = $(this),
-					href = $this.attr('href'),
-					$target, x, y;
-
-				// Get target.
-				if (href == '#'
-					|| ($target = $(href)).length == 0)
-					return;
-
-				// Prevent default.
+			if (event) {
+				var href = $this.attr('href')
 				event.preventDefault();
+			} else {
+				var href = location.hash
+			}
 
-				// Calculate x, y.
-				if (skel.breakpoint('small').active) {
+			var $this = $(this),
+				// href = $this.attr('href'),
+				$target, x, y;
 
-					x = $target.offset().top - (Math.max(0, $window.height() - $target.outerHeight()) / 2);
-					y = { scrollTop: x };
+			// Get target.
+			if (href == '#'
+				|| ($target = $(href)).length == 0)
+				return;
 
-				}
-				else {
+			// Prevent default.
+			// event.preventDefault();
 
-					x = $target.offset().left - (Math.max(0, $window.width() - $target.outerWidth()) / 2);
-					y = { scrollLeft: x };
+			// Calculate x, y.
+			if (skel.breakpoint('small').active) {
 
-				}
+				x = $target.offset().top - (Math.max(0, $window.height() - $target.outerHeight()) / 2);
+				y = { scrollTop: x };
 
-				// Scroll.
-				$bodyHtml
-					.stop()
-					.animate(
-					y,
-					settings.linkScrollSpeed,
-					'swing'
-					);
+			}
+			else {
 
-			});
+				x = $target.offset().left - (Math.max(0, $window.width() - $target.outerWidth()) / 2);
+				y = { scrollLeft: x };
+
+			}
+
+			// Scroll.
+			$bodyHtml
+				.stop()
+				.animate(
+				y,
+				settings.linkScrollSpeed,
+				'swing'
+				);
+
+		}
+		$wrapper
+			.on('click', 'a[href^="#"]', linkScroll);
+
+		if (location.hash){
+			setTimeout(function () {
+					$bodyHtml.scrollLeft(0)
+					linkScroll()
+				}, 0);
+		}
 
 		// Gallery.
 		$('.gallery')
