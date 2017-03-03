@@ -85,6 +85,7 @@
 			$body = $('body'),
 			$html = $('html'),
 			$bodyHtml = $('body,html'),
+			$header = $('#header'),
 			$wrapper = $('#wrapper');
 
 		// Disable animations/transitions until the page has loaded.
@@ -578,16 +579,16 @@
 		// Link scroll.
 		var linkScroll = function (event) {
 
-			if (event) {
-				var href = $this.attr('href')
-				event.preventDefault();
-			} else {
-				var href = location.hash
-			}
-
 			var $this = $(this),
 				// href = $this.attr('href'),
 				$target, x, y;
+
+			if (event) {
+				var href = $this.attr('href')
+				event.preventDefault()
+			} else {
+				var href = location.hash
+			}
 
 			// Get target.
 			if (href == '#'
@@ -621,14 +622,14 @@
 				);
 
 		}
-		$wrapper
-			.on('click', 'a[href^="#"]', linkScroll);
+		$wrapper.on('click', 'a[href^="#"]', linkScroll);
+		$header.on('click', 'a[href^="#"]', linkScroll);
 
-		if (location.hash){
+		if (location.hash) {
 			setTimeout(function () {
-					$bodyHtml.scrollLeft(0)
-					linkScroll()
-				}, 0);
+				$bodyHtml.scrollLeft(0)
+				linkScroll()
+			}, 0);
 		}
 
 		// Gallery.
