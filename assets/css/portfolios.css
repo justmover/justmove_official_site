@@ -3115,6 +3115,8 @@
 			flex-direction: column;
 			height: auto;
 		}
+		
+		
 
 			.panel > *.color1 {
 				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
@@ -3959,6 +3961,7 @@
 
 			#wrapper > .scrollZone.left {
 				left: 0;
+				width:0px;
 			}
 
 			#wrapper > .scrollZone.right {

@@ -81,7 +81,7 @@ function handleComplete() {
                         <br>
 							<li><a href="index.html">Home</a></li>
                             <br>
-							<li><a href="portfolios.html">Portfolios</a></li>
+							<li><a href="portfolios.html#projects">Portfolios</a></li>
                             <br>
                             <h5>Service</h5>
 							<li><a href="portfolios.html#web">Web Base Solutions</a></li>
@@ -134,13 +134,13 @@ function handleComplete() {
 									<div>
 										<h2>Service</h2>
 										<p class="words"> We are mastering varies technical areas and keep growing...</p>
-                                        <img src="images/service.png" class="servicepic hide-xs">
-                                        <img src="images/service_mobile.png" class="servicepic-m hide-lg">
+                                        <a href="portfolios.html"><img src="images/service.png" class="servicepic hide-xs" ></a>
+                                        <a href="portfolios.html"><img src="images/service_mobile.png" class="servicepic-m hide-lg"></a>
                                         <div style="display: flex; justify-content: flex-end; margin-top:-230px; margin-bottom:50px;" >
                                         <body onload="init();" style="margin:0px;">
                                         <canvas id="canvas" class="hide-xs"></canvas></body>
                                         </div>
-										<!--<a href="#" class="special">details</a>-->
+										<a href="portfolios.html" class="special">details</a>
 									</div>
 								</div>
 							</section>
@@ -154,7 +154,7 @@ function handleComplete() {
 										<p> We are a team of engineers who keep moving forward on the cyber world. Mastering the latest technology, we keep changing the industry standard of computing and economic efficiency. <strong>We never stop, we Just Move !</strong></p>
 									<p class="believes"> Common Believes and Methodology:<br>‧Agile Development  ‧Economically Efficient<br>‧System Security ‧Social-Responsibility</p>
 									
-								    <a href="portfolios.html"><button class="btn-portfolio">Portfolios</button></a>
+								    <a href="portfolios.html#projects"><button class="btn-portfolio">Portfolios</button></a>
 								  </div>
 								</div>
 					  </section>
@@ -226,9 +226,9 @@ demo.onmouseout = function() {
 					<section id="footer">
 						<div class="inner">
 							<h2 class="major">Contact Us</h2>
-                            
+
 							
-							<form method="post" action="#">
+							<form id="contactus" method="post" action="">
 								<div class="field">
 									<label for="name">Name</label>
 									<input type="text" name="name" id="name" />
@@ -245,6 +245,9 @@ demo.onmouseout = function() {
 									<li><input type="submit" value="Send Message"/></li>
 								</ul>
 							</form>
+                            
+
+
 							<ul class="contact">
 								<li class="fa-home">
 									Just Move Limited<br />
