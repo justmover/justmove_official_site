@@ -3537,11 +3537,6 @@
 		width: 95%;
 	}
 
-		#footer > * {
-			width: 100%;
-		}
-
-
 
 		#footer .copyright {
 			list-style: none;
@@ -3561,7 +3556,11 @@
 					margin-bottom: 20px;
 			margin-top: 20px;
 				}
-
+ #join{
+	display:flex;
+	justify-content:center;
+	margin: 150px 30px 30px 40px;
+	}
 
 	
 	/*logo*/
