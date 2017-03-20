@@ -1,273 +1,288 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>Just Move Limited</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script src="assets/js/ie/html5shiv.js"></script>
-		<link rel="stylesheet" href="assets/css/main.css" />
-<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="js/workflow.js"></script>
-<script>
-var canvas, stage, exportRoot;
-function init() {
-	canvas = document.getElementById("canvas");
-	handleComplete();
-}
-function handleComplete() {
-	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-	exportRoot = new lib.未命名1();
-	stage = new createjs.Stage(canvas);
-	stage.addChild(exportRoot);	
-	//Registers the "tick" event listener.
-	createjs.Ticker.setFPS(lib.properties.fps);
-	createjs.Ticker.addEventListener("tick", stage);	    
-	//Code to support hidpi screens and responsive scaling.
-	(function(isResp, respDim, isScale, scaleType) {		
-		var lastW, lastH, lastS=1;		
-		window.addEventListener('resize', resizeCanvas);		
-		resizeCanvas();		
-		function resizeCanvas() {			
-			var w = lib.properties.width, h = lib.properties.height;			
-			var iw = window.innerWidth, ih=window.innerHeight;			
-			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
-			if(isResp) {                
-				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
-					sRatio = lastS;                
-				}				
-				else if(!isScale) {					
-					if(iw<w || ih<h)						
-						sRatio = Math.min(xRatio, yRatio);				
-				}				
-				else if(scaleType==1) {					
-					sRatio = Math.min(xRatio, yRatio);				
-				}				
-				else if(scaleType==2) {					
-					sRatio = Math.max(xRatio, yRatio);				
-				}			
-			}			
-			canvas.width = w*pRatio*sRatio;			
-			canvas.height = h*pRatio*sRatio;
-			canvas.style.width = w*sRatio+'px';			
-			canvas.style.height = h*sRatio+'px';
-			stage.scaleX = pRatio*sRatio;			
-			stage.scaleY = pRatio*sRatio;			
-			lastW = iw; lastH = ih; lastS = sRatio;		
+
+<head>
+	<title>Just Move Limited</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="assets/js/ie/html5shiv.js"></script>
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+	<script src="assets/js/workflow.js"></script>
+	<script>
+		var canvas, stage, exportRoot;
+		function init() {
+			canvas = document.getElementById("canvas");
+			handleComplete();
 		}
-	})(false,'both',false,1);	
-}
-</script>		
-		
-	</head>
-	<body>
-   
-	 
-    
-    
-                <!-- nav -->
-					<header id="header_menu">
-						        <nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-					</header>
+		function handleComplete() {
+			//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+			exportRoot = new lib.未命名1();
+			stage = new createjs.Stage(canvas);
+			stage.addChild(exportRoot);
+			//Registers the "tick" event listener.
+			createjs.Ticker.setFPS(lib.properties.fps);
+			createjs.Ticker.addEventListener("tick", stage);
+			//Code to support hidpi screens and responsive scaling.
+			(function (isResp, respDim, isScale, scaleType) {
+				var lastW, lastH, lastS = 1;
+				window.addEventListener('resize', resizeCanvas);
+				resizeCanvas();
+				function resizeCanvas() {
+					var w = lib.properties.width, h = lib.properties.height;
+					var iw = window.innerWidth, ih = window.innerHeight;
+					var pRatio = window.devicePixelRatio || 1, xRatio = iw / w, yRatio = ih / h, sRatio = 1;
+					if (isResp) {
+						if ((respDim == 'width' && lastW == iw) || (respDim == 'height' && lastH == ih)) {
+							sRatio = lastS;
+						}
+						else if (!isScale) {
+							if (iw < w || ih < h)
+								sRatio = Math.min(xRatio, yRatio);
+						}
+						else if (scaleType == 1) {
+							sRatio = Math.min(xRatio, yRatio);
+						}
+						else if (scaleType == 2) {
+							sRatio = Math.max(xRatio, yRatio);
+						}
+					}
+					canvas.width = w * pRatio * sRatio;
+					canvas.height = h * pRatio * sRatio;
+					canvas.style.width = w * sRatio + 'px';
+					canvas.style.height = h * sRatio + 'px';
+					stage.scaleX = pRatio * sRatio;
+					stage.scaleY = pRatio * sRatio;
+					lastW = iw; lastH = ih; lastS = sRatio;
+				}
+			})(false, 'both', false, 1);
+		}
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h6>Menu</h6>
+	</script>
+
+</head>
+
+<body>
+
+
+
+
+	<!-- nav -->
+	<header id="header_menu">
+		<nav>
+			<ul>
+				<li><a href="#menu">Menu</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Menu -->
+	<nav id="menu">
+		<h6>Menu</h6>
+		<ul>
+			<br>
+			<li><a href="index.html">Home</a></li>
+			<br>
+			<li><a href="portfolios.html#projects">Portfolios</a></li>
+			<br>
+			<h5>Service</h5>
+			<li><a href="portfolios.html#web">Web Application Development</a></li>
+			<li><a href="portfolios.html#apps">Mobile App Integration</a></li>
+			<li><a href="portfolios.html#technical">Technical Consultation</a></li>
+			<li><a href="portfolios.html#iot">Internet Of Things</a></li>
+			<li><a href="portfolios.html#ux">UX Design</a></li>
+			<br>
+			<li><a href="we.html">Who Are We?</a></li>
+			<li><a href="we.html#join">Join Us</a></li>
+		</ul>
+		<a class="close" href="#menu">Close</a>
+	</nav>
+
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+		<!-- Header -->
+		<header id="header">
+			<section id="banner">
+				<div class="inner">
+					<img class="logo" src="images/jmlogo.svg">
+
+					<p> &nbsp;&bull;&nbsp; I.T . Solutions &nbsp;&bull;&nbsp; </p>
+					<nav>
 						<ul>
-                        <br>
-							<li><a href="index.html">Home</a></li>
-                            <br>
-							<li><a href="portfolios.html#projects">Portfolios</a></li>
-                            <br>
-                            <h5>Service</h5>
-							<li><a href="portfolios.html#web">Web Application Development</a></li>
-                            <li><a href="portfolios.html#apps">Mobile App Integration</a></li>
-                            <li><a href="portfolios.html#technical">Technical Consultation</a></li>
-                            <li><a href="portfolios.html#iot">Internet Of Things</a></li>
-                            <li><a href="portfolios.html#ux">UX Design</a></li>
-                            <br>
-							<li><a href="we.html">Who Are We?</a></li>
-                            <li><a href="we.html#join">Join Us</a></li>
+							<li><a class="icon fa-code" href="portfolios.html#web"><span class="label">web</span></a>
+								<p class="work">Web Application Development</p>
+							</li>
+							<li><a class="icon fa-mobile" href="portfolios.html#apps"><span class="label">app</span></a>
+								<p class="work">Mobile App Integration</p>
+							</li>
+							<li><a class="icon fa-info-circle" href="portfolios.html#technical"><span class="label">consult</span></a>
+								<p class="work">Technical Consultation</p>
+							</li>
+							<li><a class="icon fa-cog" href="portfolios.html#iot"><span class="label">IOT</span></a>
+								<p class="work">Internet Of Things</p>
+							</li>
+							<li><a class="icon fa-columns" href="portfolios.html#ux"><span class="label">UX</span></a>
+								<p class="work">UX layout design</p>
+							</li>
 						</ul>
-                        <a class="close" href="#menu">Close</a>
+
 					</nav>
-		
-                        
-                        <!-- Page Wrapper -->
-                        <div id="page-wrapper">  
-                        <!-- Header -->
-                        <header id="header">
-                        <section id="banner">
-                        <div class="inner">
-						<img class="logo" src="images/jmlogo.svg">
-                      
-						<p> &nbsp;&bull;&nbsp; I.T . Solutions &nbsp;&bull;&nbsp; </p>
-						<nav>
-							<ul>
-								<li><a  class="icon fa-code" href="portfolios.html#web"><span class="label">web</span></a><p class="work">Web Application Development</p></li>
-								<li><a  class="icon fa-mobile" href="portfolios.html#apps"><span class="label">app</span></a><p class="work">Mobile App Integration</p></li>
-								<li><a  class="icon fa-info-circle" href="portfolios.html#technical"><span class="label">consult</span></a><p class="work">Technical Consultation</p></li>
-								<li><a  class="icon fa-cog" href="portfolios.html#iot"><span class="label">IOT</span></a><p class="work">Internet Of Things</p></li>
-								<li><a  class="icon fa-columns" href="portfolios.html#ux"><span class="label">UX</span></a><p class="work">UX layout design</p></li>
-							</ul>
-                            
-						</nav>
-                        <ul class="actions">
-						      <li><a href="#one" class="btn btn-lg scrolly">KNOW MORE</a></li>
-					        </ul>
-                        </div>
-					</header>
-			  </section>
-                    
-
-			  <!-- Wrapper -->
-              
-					<section id="wrapper"> 
-                    <!-- One -->
-							<section id="one" class="wrapper spotlight style1" >
-								<div class="inner">
-									
-									<div>
-										<h2>Service</h2>
-										<p class="words"> We are mastering varies technical areas and keep growing...</p>
-                                        <a class="service" href="portfolios.html"><img src="images/service.png" class="servicepic hide-xs" ></a>
-                                        <a class="service" href="portfolios.html"><img src="images/service_mobile.png" class="servicepic-m hide-lg"></a>
-                                        <div style="display: flex; justify-content: flex-end; margin-top:-230px; margin-bottom:50px;" >
-                                        <body onload="init();" style="margin:0px;">
-                                        <canvas id="canvas" class="hide-xs"></canvas></body>
-                                        </div>
-										<a href="portfolios.html" class="special">details</a>
-									</div>
-								</div>
-							</section>
-
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="" alt="" /></a>
-								  <div class="content">
-										<h2>About us</h2>
-										<p> We are a team of engineers who keep moving forward on the cyber world. Mastering the latest technology, we keep changing the industry standard of computing and economic efficiency. <strong>We never stop, we Just Move !</strong></p>
-									<p class="believes"> Common Believes and Methodology:<br>‧Agile Development  ‧Economically Efficient<br>‧System Security ‧Social-Responsibility</p>
-									
-								    <a href="portfolios.html#projects"><button class="btn-portfolio">Portfolios</button></a>
-								  </div>
-								</div>
-					  </section>
-
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									
-								  <div class="content">
-										<h2 class="major client">Clients</h2>
-                                        
-									<!--  <marquee scrollAmount="5" width="100%" height="300" onmouseout=this.start() onmouseover=this.stop()> -->
-                                    
-                    <div id="demo" style="overflow:hidden;height:300px;width:100%;">
-                    <table align="left" cellpadding="0" cellspace="0" border="0" width="310" >
-                    <tr>
-                        <td id="demo1" valign="top">
-                            <table align="left" cellpadding="0" cellspace="0" border="0" width="310" >
-                                <tr>
-                                    <td><img class="clientlogo" src="images/client1.svg"></td>
-                                    <td><img class="clientlogo" src="images/client2.svg"></td>
-                                    <td><img class="clientlogo" src="images/client3.svg"></td>
-                                    <td><img class="clientlogo" src="images/client4.svg"></td>
-                                    <td><img class="clientlogo" src="images/client5.svg"></td>
-                                    <td><img class="clientlogo" src="images/client6.svg"></td>
-                                    <td><img class="clientlogo" src="images/client7.svg"></td>
-                                    <td><img class="clientlogo" src="images/client8.svg"></td>                     
-                       </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td id="demo2" valign="top" ></td>
-                    </tr>
-                    </table>
-                    </div>
-<script type="text/javascript">
-var speed = 15;
-var demo =document.getElementById("demo");
-var demo1 =document.getElementById("demo1");
-var demo2 =document.getElementById("demo2");
-demo2.innerHTML = demo1.innerHTML;
-function Marquee() {
-    if (demo2.offsetWidth - demo.scrollLeft <= 0)        
-        demo.scrollLeft -= demo1.offsetWidth;
-    else {
-        demo.scrollLeft++;
-    }
-}
-var MyMar = setInterval(Marquee, speed);
-demo.onmouseover = function() {
-    clearInterval(MyMar);
-}
-demo.onmouseout = function() {
-    MyMar = setInterval(Marquee, speed);
-}
-</script>
-
-                                      
-                                     <!-- </marquee> -->
-                                      
-								  </div>
-								</div>
-							</section>
-
-						
-					</section>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Contact Us</h2>
-
-							
-							<form id="contactus" method="post" action="">
-								<div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="field">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email" />
-								</div>
-								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="4"></textarea>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message"/></li>
-								</ul>
-							</form>
-                            
+					<ul class="actions">
+						<li><a href="#one" class="btn btn-lg scrolly">KNOW MORE</a></li>
+					</ul>
+				</div>
+		</header>
+		</section>
 
 
-							<ul class="contact">
-								<li class="fa-home">
-									Just Move Limited<br />
-									Unit 1303, 13/F, New Venture Centre,<br />
-									18 Lam Tin Street, Kwai Chung, N.T.
-								</li>
-								<li class="fa-phone">+852 3954 5177</li>
-								<li class="fa-envelope"><a href="mailto:info@justmove.com.hk"> info@justmove.com.hk</a></li>
-								<li class="fa-facebook"><a href="https://www.facebook.com/justmove.hk/">www.facebook.com/justmove.hk</a></li>
-								
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Just Move Limited. All rights reserved.</li>
-							</ul>
+		<!-- Wrapper -->
+
+		<section id="wrapper">
+			<!-- One -->
+			<section id="one" class="wrapper spotlight style1">
+				<div class="inner">
+
+					<div>
+						<h2>Service</h2>
+						<p class="words"> We are mastering varies technical areas and keep growing...</p>
+						<a class="service" href="portfolios.html"><img src="images/service.png" class="servicepic hide-xs"></a>
+						<a class="service" href="portfolios.html"><img src="images/service_mobile.png" class="servicepic-m hide-lg"></a>
+						<div style="display: flex; justify-content: flex-end; margin-top:-230px; margin-bottom:50px;">
+
+							<body onload="init();" style="margin:0px;">
+								<canvas id="canvas" class="hide-xs"></canvas>
+							</body>
 						</div>
-					</section>
+						<a href="portfolios.html" class="special">details</a>
+					</div>
+				</div>
+			</section>
 
+			<!-- Two -->
+			<section id="two" class="wrapper alt spotlight style2">
+				<div class="inner">
+					<a href="#" class="image"><img src="" alt="" /></a>
+					<div class="content">
+						<h2>About us</h2>
+						<p> We are a team of engineers who keep moving forward on the cyber world. Mastering the latest technology, we keep changing
+							the industry standard of computing and economic efficiency. <strong>We never stop, we Just Move !</strong></p>
+						<p class="believes"> Common Believes and Methodology:<br>‧Agile Development ‧Economically Efficient<br>‧System Security ‧Social-Responsibility</p>
+
+						<a href="portfolios.html#projects"><button class="btn-portfolio">Portfolios</button></a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Three -->
+			<section id="three" class="wrapper spotlight style3">
+				<div class="inner">
+
+					<div class="content">
+						<h2 class="major client">Clients</h2>
+
+						<!--  <marquee scrollAmount="5" width="100%" height="300" onmouseout=this.start() onmouseover=this.stop()> -->
+
+						<div id="demo" style="overflow:hidden;height:300px;width:100%;">
+							<table align="left" cellpadding="0" cellspace="0" border="0" width="310">
+								<tr>
+									<td id="demo1" valign="top">
+										<table align="left" cellpadding="0" cellspace="0" border="0" width="310">
+											<tr>
+												<td><img class="clientlogo" src="images/client1.svg"></td>
+												<td><img class="clientlogo" src="images/client2.svg"></td>
+												<td><img class="clientlogo" src="images/client3.svg"></td>
+												<td><img class="clientlogo" src="images/client4.svg"></td>
+												<td><img class="clientlogo" src="images/client5.svg"></td>
+												<td><img class="clientlogo" src="images/client6.svg"></td>
+												<td><img class="clientlogo" src="images/client7.svg"></td>
+												<td><img class="clientlogo" src="images/client8.svg"></td>
+									</td>
+									</tr>
+									</table>
+									</td>
+									<td id="demo2" valign="top"></td>
+								</tr>
+							</table>
+						</div>
+						<script type="text/javascript">
+							var speed = 15;
+							var demo = document.getElementById("demo");
+							var demo1 = document.getElementById("demo1");
+							var demo2 = document.getElementById("demo2");
+							demo2.innerHTML = demo1.innerHTML;
+							function Marquee() {
+								if (demo2.offsetWidth - demo.scrollLeft <= 0)
+									demo.scrollLeft -= demo1.offsetWidth;
+								else {
+									demo.scrollLeft++;
+								}
+							}
+							var MyMar = setInterval(Marquee, speed);
+							demo.onmouseover = function () {
+								clearInterval(MyMar);
+							}
+							demo.onmouseout = function () {
+								MyMar = setInterval(Marquee, speed);
+							}
+
+						</script>
+
+
+						<!-- </marquee> -->
+
+					</div>
+				</div>
+			</section>
+
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<h2 class="major">Contact Us</h2>
+
+
+				<form id="contactus" method="post" action="">
+					<div class="field">
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" />
+					</div>
+					<div class="field">
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email" />
+					</div>
+					<div class="field">
+						<label for="message">Message</label>
+						<textarea name="message" id="message" rows="4"></textarea>
+					</div>
+					<ul class="actions">
+						<li><input type="submit" value="Send Message" /></li>
+					</ul>
+				</form>
+
+
+
+				<ul class="contact">
+					<li class="fa-home">
+						Just Move Limited<br /> Unit 1303, 13/F, New Venture Centre,<br /> 18 Lam Tin Street, Kwai Chung, N.T.
+					</li>
+					<li class="fa-phone">+852 3954 5177</li>
+					<li class="fa-envelope"><a href="mailto:info@justmove.com.hk"> info@justmove.com.hk</a></li>
+					<li class="fa-facebook"><a href="https://www.facebook.com/justmove.hk/">www.facebook.com/justmove.hk</a></li>
+
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Just Move Limited. All rights reserved.</li>
+				</ul>
 			</div>
+		</section>
 
-		<!-- Scripts -->
+	</div>
+
+	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>
@@ -275,4 +290,5 @@ demo.onmouseout = function() {
 	<script src="assets/js/main.js"></script>
 
 </body>
+
 </html>
