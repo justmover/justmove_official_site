@@ -1741,14 +1741,14 @@
 	}
 
 		table tbody tr {
-			border: solid 1px rgba(255, 255, 255, 0.25);
+			border-bottom: solid 1px rgba(255, 255, 255, 0.25);
 			border-left: 0;
 			border-right: 0;
 		}
 
-			table tbody tr:nth-child(2n + 1) {
+			/*table tbody tr:nth-child(2n + 1) {
 				background-color: rgba(255, 255, 255, 0.075);
-			}
+			}*/
 
 		table td {
 			padding: 0.75rem 0.75rem;
@@ -1757,8 +1757,9 @@
 		table th {
 			color: rgba(255, 255, 255, 0.875);
 			font-size: 0.9rem;
-			font-weight: 400;
+			font-weight: bold;
 			padding: 0 0.75rem 0.75rem 0.75rem;
+			background-color: rgba(255, 255, 255, 0.1);
 			text-align: left;
 		}
 
@@ -4068,5 +4069,4 @@
 	}
 	
 
-	
 
