@@ -1,10 +1,26 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
 	<title>Just Move Limited</title>
 	<meta name="description" content="A software solution provider based in Hong Kong. A start-up company keen on innovative projects.">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="shortcut icon" type="image/png" href="images/logo/favicon.ico"/>
+
+	<!-- #region iOS Web App-->
+	<meta name="apple-mobile-web-app-title" content="Just Move Web Site">
+	<meta name="apple-mobile-web-app-capable" content="Just Move Web Site">
+	<link rel="apple-touch-icon" href="images/logo/apple-icon-180x180.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/logo/apple-icon-180x180.png">
+	<!-- #endregion -->
+
+	<!-- #region Chrome Web App-->
+	<meta name="mobile-web-app-capable" content="YES">
+	<link rel="manifest" href="images/logo/manifest.json">
+	<!-- #endregion -->
+
 	<script src="assets/js/ie/html5shiv.js"></script>
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
@@ -59,12 +75,15 @@
 		}
 	</script>
 </head>
+
 <body>
 	<!-- nav -->
 	<header id="header_menu">
 		<nav>
 			<ul>
-				<li><a href="#menu">Menu</a></li>
+				<li>
+					<a href="#menu">Menu</a>
+				</li>
 			</ul>
 		</nav>
 	</header>
@@ -73,20 +92,40 @@
 		<h6>Menu</h6>
 		<ul>
 			<br>
-			<li><a href="index.html">Home</a></li>
+			<li>
+				<a href="index.html">Home</a>
+			</li>
 			<br>
-			<li><a href="portfolios.html#projects">Portfolios</a></li>
+			<li>
+				<a href="portfolios.html#projects">Portfolios</a>
+			</li>
 			<br>
 			<h5>Service</h5>
-			<li><a href="portfolios.html#web">Web Application Development</a></li>
-			<li><a href="portfolios.html#apps">Mobile App Integration</a></li>
-			<li><a href="portfolios.html#technical">Technical Consultation</a></li>
-			<li><a href="portfolios.html#iot">Internet Of Things</a></li>
-			<li><a href="portfolios.html#ux">UX Design</a></li>
-            <li><a href="portfolios.html#package">Package</a></li>
+			<li>
+				<a href="portfolios.html#web">Web Application Development</a>
+			</li>
+			<li>
+				<a href="portfolios.html#apps">Mobile App Integration</a>
+			</li>
+			<li>
+				<a href="portfolios.html#technical">Technical Consultation</a>
+			</li>
+			<li>
+				<a href="portfolios.html#iot">Internet Of Things</a>
+			</li>
+			<li>
+				<a href="portfolios.html#ux">UX Design</a>
+			</li>
+			<li>
+				<a href="portfolios.html#package">Package</a>
+			</li>
 			<br>
-			<li><a href="we.html">Who Are We?</a></li>
-			<li><a href="we.html#join">Join Us</a></li>
+			<li>
+				<a href="we.html">Who Are We?</a>
+			</li>
+			<li>
+				<a href="we.html#join">Join Us</a>
+			</li>
 		</ul>
 		<a class="close" href="#menu">Close</a>
 	</nav>
@@ -100,25 +139,42 @@
 					<p> &nbsp;&bull;&nbsp; I.T . Solutions &nbsp;&bull;&nbsp; </p>
 					<nav>
 						<ul>
-							<li><a class="icon fa-code" href="portfolios.html#web"><span class="label">web</span></a>
+							<li>
+								<a class="icon fa-code" href="portfolios.html#web">
+									<span class="label">web</span>
+								</a>
 								<p class="work">Web Application Development</p>
 							</li>
-							<li><a class="icon fa-mobile" href="portfolios.html#apps"><span class="label">app</span></a>
+							<li>
+								<a class="icon fa-mobile" href="portfolios.html#apps">
+									<span class="label">app</span>
+								</a>
 								<p class="work">Mobile App Integration</p>
 							</li>
-							<li><a class="icon fa-info-circle" href="portfolios.html#technical"><span class="label">consult</span></a>
+							<li>
+								<a class="icon fa-info-circle" href="portfolios.html#technical">
+									<span class="label">consult</span>
+								</a>
 								<p class="work">Technical Consultation</p>
 							</li>
-							<li><a class="icon fa-cog" href="portfolios.html#iot"><span class="label">IOT</span></a>
+							<li>
+								<a class="icon fa-cog" href="portfolios.html#iot">
+									<span class="label">IOT</span>
+								</a>
 								<p class="work">Internet Of Things</p>
 							</li>
-							<li><a class="icon fa-columns" href="portfolios.html#ux"><span class="label">UX</span></a>
+							<li>
+								<a class="icon fa-columns" href="portfolios.html#ux">
+									<span class="label">UX</span>
+								</a>
 								<p class="work">UX layout design</p>
 							</li>
 						</ul>
 					</nav>
 					<ul class="actions">
-						<li><a href="#one" class="btn btn-lg scrolly">KNOW MORE</a></li>
+						<li>
+							<a href="#one" class="btn btn-lg scrolly">KNOW MORE</a>
+						</li>
 					</ul>
 				</div>
 		</header>
@@ -131,9 +187,14 @@
 					<div>
 						<h2>Service</h2>
 						<p class="words"> We are mastering varies technical areas and keep growing...</p>
-						<a class="service" href="portfolios.html"><img src="images/service.png" class="servicepic hide-xs"></a>
-						<a class="service" href="portfolios.html"><img src="images/service_mobile.png" class="servicepic-m hide-lg"></a>
+						<a class="service" href="portfolios.html">
+							<img src="images/service.png" class="servicepic hide-xs">
+						</a>
+						<a class="service" href="portfolios.html">
+							<img src="images/service_mobile.png" class="servicepic-m hide-lg">
+						</a>
 						<div style="display: flex; justify-content: flex-end; margin-top:-230px; margin-bottom:50px;">
+
 							<body onload="init();" style="margin:0px;">
 								<canvas id="canvas" class="hide-xs"></canvas>
 							</body>
@@ -145,13 +206,21 @@
 			<!-- Two -->
 			<section id="two" class="wrapper alt spotlight style2">
 				<div class="inner">
-					<a href="#" class="image"><img src="" alt="" /></a>
+					<a href="#" class="image">
+						<img src="" alt="" />
+					</a>
 					<div class="content">
 						<h2>About us</h2>
 						<p> We are a team of engineers who keep moving forward on the cyber world. Mastering the latest technology, we keep changing
-							the industry standard of computing and economic efficiency. <strong>We never stop, we Just Move !</strong></p>
-						<p class="believes"> Common Believes and Methodology:<br>‧Agile Development ‧Economically Efficient<br>‧System Security ‧Social-Responsibility</p>
-						<a href="portfolios.html#projects"><button class="btn-portfolio">Portfolios</button></a>
+							the industry standard of computing and economic efficiency.
+							<strong>We never stop, we Just Move !</strong>
+						</p>
+						<p class="believes"> Common Believes and Methodology:
+							<br>‧Agile Development ‧Economically Efficient
+							<br>‧System Security ‧Social-Responsibility</p>
+						<a href="portfolios.html#projects">
+							<button class="btn-portfolio">Portfolios</button>
+						</a>
 					</div>
 				</div>
 			</section>
@@ -167,14 +236,30 @@
 									<td id="demo1" valign="top">
 										<table align="left" cellpadding="0" cellspace="0" border="0" width="310">
 											<tr>
-												<td><img class="clientlogo" src="images/client1.svg"></td>
-												<td><img class="clientlogo" src="images/client2.svg"></td>
-												<td><img class="clientlogo" src="images/client3.svg"></td>
-												<td><img class="clientlogo" src="images/client4.svg"></td>
-												<td><img class="clientlogo" src="images/client5.svg"></td>
-												<td><img class="clientlogo" src="images/client6.svg"></td>
-												<td><img class="clientlogo" src="images/client7.svg"></td>
-												<td><img class="clientlogo" src="images/client8.svg"></td>
+												<td>
+													<img class="clientlogo" src="images/client1.svg">
+												</td>
+												<td>
+													<img class="clientlogo" src="images/client2.svg">
+												</td>
+												<td>
+													<img class="clientlogo" src="images/client3.svg">
+												</td>
+												<td>
+													<img class="clientlogo" src="images/client4.svg">
+												</td>
+												<td>
+													<img class="clientlogo" src="images/client5.svg">
+												</td>
+												<td>
+													<img class="clientlogo" src="images/client6.svg">
+												</td>
+												<td>
+													<img class="clientlogo" src="images/client7.svg">
+												</td>
+												<td>
+													<img class="clientlogo" src="images/client8.svg">
+												</td>
 									</td>
 									</tr>
 									</table>
@@ -232,12 +317,20 @@
 				</form>-->
 				<ul class="contact">
 					<li class="fa-home">
-						Just Move Limited<br /> Unit 10, 19/F, Asia Trade Centre,<br /> 79 Lei Muk Road, Kwai Chung, N.T.
+						Just Move Limited
+						<br /> Unit 10, 19/F, Asia Trade Centre,
+						<br /> 79 Lei Muk Road, Kwai Chung, N.T.
 					</li>
 					<li class="fa-phone">+852 3954 5177</li>
-					<li class="fa-envelope"><a href="mailto:info@justmove.com.hk"> info@justmove.com.hk</a></li>
-					<li class="fa-facebook"><a href="https://www.facebook.com/justmove.hk/">www.facebook.com/justmove.hk</a></li>
-					<li class="fa-telegram"><a href="https://t.me/justmover">https://t.me/justmover</a></li>
+					<li class="fa-envelope">
+						<a href="mailto:info@justmove.com.hk"> info@justmove.com.hk</a>
+					</li>
+					<li class="fa-facebook">
+						<a href="https://www.facebook.com/justmove.hk/">www.facebook.com/justmove.hk</a>
+					</li>
+					<li class="fa-telegram">
+						<a href="https://t.me/justmover">https://t.me/justmover</a>
+					</li>
 				</ul>
 				<ul class="copyright">
 					<li>&copy; Just Move Limited. All rights reserved.</li>
@@ -252,4 +345,5 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
+
 </html>
